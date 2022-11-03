@@ -155,11 +155,20 @@ const app = createApp({
         this.activeImage = this.gallery.length -1
       }
     },
-    created:{
-      setInterval(nextBack, 3000){
-        
-      }
 
+    autoplay(){
+      this.autoChange = setInterval(() =>{
+        this.nextBack(true);
+      }, 3000);
+    },
+
+    stopAutoChange(){
+      clearInterval(this.autoChange)
     }
+  },
+
+  created(){
+    this.autoplay();
   }
+
 }).mount('#app')
