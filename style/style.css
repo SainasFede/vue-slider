@@ -1,0 +1,100 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  border: 1px solid black;
+}
+
+.description{
+  position: absolute;
+  z-index: 998;
+  top: 40px;
+  right: 40px;
+  text-align: right;
+  width: 80%;
+  height: 100px;
+}
+
+.title, .info-img{
+  color: white;
+  text-shadow: 2px 2px black ;
+}
+
+.title.active{
+  display: block;
+}
+
+.info-img.active{
+  display: block;
+}
+
+.box-img{
+  width: 100%;
+  height: 600px;
+}
+
+.box-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active{
+  display: block;
+}
+
+.carousel{
+  width: 100%;
+  height: 200px;
+  display: flex;
+}
+
+.carousel img{
+  width: calc(100% / 5);
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.carousel img.active{
+  opacity: 1;
+  border: 2px solid crimson;
+}
+
+.buttons{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  bottom: 90px;
+  left: 0;
+}
+
+.back, .next{
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: crimson;
+  background-color: whitesmoke;
+}
+
+.back:hover, .next:hover{
+  color: rgb(10, 43, 226);
+}

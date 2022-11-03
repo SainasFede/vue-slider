@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://unpkg.com/vue@3'></script>
+  <link rel="stylesheet" href="style/style.css">
+
+  <title>Carosello Array di Oggetti</title>
+</head>
+<body>
+  <div id="app">
+
+    <div class="main-container">
+  
+      <div class="container">
+  
+        <div class="description">
+          <h1 class="title">{{gallery[activeImage].titolo}}</h1>
+          <p class="info-img">{{gallery[activeImage].descrizione}}</p>
+        </div>
+  
+        <div class="buttons">
+          <div @click="nextBack(false)" class="back">
+            &larr;
+          </div>
+          <div @click="nextBack(true)" class="next">
+            &rarr;
+          </div>
+        </div>
+  
+        <div class="box-img">
+          <img :src="gallery[activeImage].photo" class="item" alt="">
+        </div>
+  
+        <div class="carousel">
+          <img v-for="(obj, indice) in gallery" :src="obj.photo" class="item-carousel" 
+          @click="changeImage(indice)"
+          :class="{'active': indice === activeImage}" alt="">
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+
+
+
+  <script src="script/script.js"></script>
+</body>
+</html>
